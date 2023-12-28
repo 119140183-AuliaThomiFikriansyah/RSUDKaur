@@ -29,11 +29,12 @@ const monthAbbreviations = [
   'Des',
 ];
 
-const DropdownComponent = () => {
+const DropdownComponent = ({ onInputChange }) => {
   const [value, setValue] = useState(null);
 
   const handleDropdownChange = item => {
     setValue(item.value);
+    onInputChange(item);
 
     if (item.value === '1') {
       const currentDate = new Date();
